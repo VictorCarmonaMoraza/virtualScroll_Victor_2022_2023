@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { VirtualComponent } from './virtual/virtual.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import 'hammerjs';
 
 @NgModule({
   declarations: [

@@ -1,0 +1,5 @@
+.animated{
+ animation-duration: 500ms !important;
+ animation-delay: 0s !important;
+ animation-iteration-count: 1 !important;
+}

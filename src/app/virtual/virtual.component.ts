@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-virtual',
@@ -7,8 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VirtualComponent implements OnInit {
 
-//Creamos y rellenamos un arreglo de ceros de 500 posiciones
-  personas = Array(500).fill(0);
+  @ViewChild(CdkVirtualScrollViewport) viewport!: CdkVirtualScrollViewport;
+
+  //Creamos y rellenamos un arreglo de ceros de 500 posiciones
+  public personas = Array(500).fill(0);
 
   constructor() { }
 
@@ -16,4 +19,16 @@ export class VirtualComponent implements OnInit {
     console.log(this.personas);
   }
 
+
+  irFinal() {
+    this.viewport.scrollToIndex(this.personas.length)
+  }
+
+  irInicio() {
+    this.viewport.scrollToIndex(0)
+  }
+
+  irMitad() {
+    this.viewport.scrollToIndex(this.personas.length / 2);
+  }
 }
